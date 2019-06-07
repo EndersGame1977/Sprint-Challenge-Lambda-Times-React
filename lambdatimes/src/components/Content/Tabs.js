@@ -1,20 +1,21 @@
 import React from 'react';
 import Tab from './Tab';
 const Tabs = props => {
-  // console.log(props); verified data is in props
+
+  const { tabs, selectedTab, selectTabHandler } = props;
   return (
     <div className="tabs">
       <div className="topics">
         <span className="title">TRENDING TOPICS:</span>
-        {/* map over the tabs provided on your props, create a new Tab component for each one.
-            give the tab component a `selectTabHandler`, the `selectedTab`, and the `tab` itself as props*/}
-        {props.tabs.map(tab => (
+
+        {tabs.map(tab => (
           <Tab
             tab={tab}
-          // selectedTab={this.changeSelected}
-          // selectTabHandler={this.selectTabHandler}
+            selectedTab={selectedTab}
+            selectTabHandler={selectTabHandler}
           />
         ))}
+
       </div>
     </div>
   );
