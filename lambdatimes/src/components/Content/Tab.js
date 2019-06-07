@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Tab = props => {
 
@@ -11,11 +12,14 @@ const Tab = props => {
         selectedTab(tab);
       }}
     >
-      {props.tab.toUpperCase()}
+      {tab.toUpperCase()}
     </div>
   );
 };
 
-// Make sure you include PropTypes on your props.
+Tab.propTypes = {
+  tab: PropTypes.string.isRequired
+}
+
 
 export default Tab;
